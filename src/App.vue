@@ -1,12 +1,16 @@
 <template>
   <div id="app">
-    <router-view/>
+    <Player></Player>
+    <Playlist></Playlist>
   </div>
 </template>
 
 <script>
+import Playlist from './components/Playlist'
+import Player from './components/Player'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {Player, Playlist}
 }
 </script>
 
@@ -17,16 +21,19 @@ export default {
     justify-content: center
     align-items: center
     height: 100vh
+    background: gainsboro
 
   #app
     display: flex
-    justify-content: center
+    justify-content: space-around
     align-items: center
     border: bisque
-    background: aqua
+    background: #737db3
+    background: linear-gradient(#737db3, #9198e5)
     max-height: 540px
     height: 100%
-    max-width: 1200px
+    max-width: 790px
     width: 100%
-
+    flex-wrap: wrap
+    box-shadow: 1px 15px 35px -12px rgba(0,0,0,0.75)
 </style>

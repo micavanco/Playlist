@@ -1,21 +1,17 @@
 <template>
-  <div class="playlist">
-    <AudioTrack></AudioTrack>
+  <div class="player">
+    Player
   </div>
 </template>
 
 <script>
-import AudioTrack from './AudioTrack'
 export default {
-  name: 'Playlist',
-  components: {AudioTrack},
-  titles: ['Still Don\'t Know', 'I Love It', 'Girlfriend']
+  name: 'Player'
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="sass">
-  .playlist
+  .player
       display: flex
       flex-direction: column
       justify-content: center
