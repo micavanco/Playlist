@@ -1,15 +1,21 @@
 <template>
   <div class="playlist">
     <AudioTrack></AudioTrack>
+    {{tracklist$}}
   </div>
 </template>
 
 <script>
 import AudioTrack from './AudioTrack'
+import {tracklistService} from '../services/tracklist.service'
 export default {
   name: 'Playlist',
   components: {AudioTrack},
-  titles: ['Still Don\'t Know', 'I Love It', 'Girlfriend']
+  titles: ['Still Don\'t Know', 'I Love It', 'Girlfriend'],
+  subscriptions () {
+    const tracklist$ = tracklistService.getData()
+    return {tracklist$}
+  }
 }
 </script>
 

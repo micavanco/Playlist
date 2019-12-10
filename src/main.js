@@ -6,7 +6,11 @@ import App from './App'
 import Rx from 'rxjs'
 import VueRx from 'vue-rx'
 
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
 Vue.use(VueRx, Rx)
+Vue.use(VueAxios, axios)
 
 Vue.config.productionTip = false
 
