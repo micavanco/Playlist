@@ -1,0 +1,30 @@
+[
+  {
+    "artist": "Icona Pop",
+    "favorite": true,
+    "image": "https://i.ytimg.com/vi/3TDHRSjR0s0/maxresdefault.jpg",
+    "time": "2:35",
+    "title": "Still Don't Know"
+  },
+  {
+    "artist": "Icona Pop",
+    "favorite": false,
+    "image": "https://i.ytimg.com/vi/HQ40wBhB4dc/hqdefault.jpg",
+    "time": "3:20",
+    "title": "I Love it"
+  },
+  {
+    "artist": "Icona Pop",
+    "favorite": true,
+    "image": "https://i.ytimg.com/vi/4_7zkXv17QE/maxresdefault.jpg",
+    "time": "2:51",
+    "title": "Nights Like This"
+  },
+  {
+    "artist": "Icona Pop",
+    "favorite": false,
+    "image": "https://bi.im-g.pl/im/29/ab/14/z21672489V,W-Gdansku-rozpoczal-sie-jeden-z-najpopularniejszyc.jpg",
+    "time": "3:02",
+    "title": "We Got the World"
+  }
+]

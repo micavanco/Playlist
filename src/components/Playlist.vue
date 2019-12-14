@@ -1,20 +1,24 @@
 <template>
   <div class="playlist">
     <AudioTrack></AudioTrack>
-    {{tracklist$}}
+    <ul>
+      <li v-for="track in tracks" :key="track.title">
+        {{track.title}}
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
 import AudioTrack from './AudioTrack'
-import {tracklistService} from '../services/tracklist.service'
+import {mapState} from 'vuex'
+import {store} from '../store'
 export default {
   name: 'Playlist',
   components: {AudioTrack},
-  titles: ['Still Don\'t Know', 'I Love It', 'Girlfriend'],
-  subscriptions () {
-    const tracklist$ = tracklistService.getData()
-    return {tracklist$}
+  computed: mapState(['tracks']),
+  created: () => {
+    store.dispatch('onInit')
   }
 }
 </script>
