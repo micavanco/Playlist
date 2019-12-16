@@ -24,10 +24,15 @@ export default {
 <style scoped lang="sass">
   .audiotrack
     position: relative
-    width: 280px
+    width: 245px
     margin: 20px
     height: 50px
     border-bottom: 1px solid #dadada
+    transition: all .3s ease-in-out
+    cursor: pointer
+    padding: 2px
+    &:hover
+      background: rgba(169, 169, 169, 0.07)
     &__header
       font-size: 11px
       color: gray
@@ -35,9 +40,18 @@ export default {
       position: absolute
       right: 10px
       top: 10px
+      cursor: default
       &__share
         color: gray
+        cursor: pointer
+        transition: all .3s ease-in-out
+        &:hover
+          color: darkgrey
       &__heart
         color: red
+        cursor: pointer
+        transition: all .3s ease-in-out
+        &:hover
+          color: lightcoral
 
 </style>

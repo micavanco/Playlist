@@ -36,4 +36,14 @@ export default {
     width: 100%
     flex-wrap: wrap
     box-shadow: 1px 15px 35px -12px rgba(0,0,0,0.75)
+
+  ::-webkit-scrollbar
+    width: 10px
+  ::-webkit-scrollbar-track
+    background: rgba(241, 241, 241, 0)
+  ::-webkit-scrollbar-thumb
+    background: rgba(136, 136, 136, 0.25)
+    border-radius: 4px
+  ::-webkit-scrollbar-thumb:hover
+    background: rgba(136, 136, 136, 0.5)
 </style>

@@ -1,6 +1,11 @@
 <template>
   <div class="playlist">
-    <AudioTrack v-for="track in tracks" v-bind:data="track"></AudioTrack>
+    <div class="playlist__title">
+      <h2>Playlist</h2>
+    </div>
+    <div class="playlist__list">
+      <AudioTrack v-for="track in tracks" v-bind:data="track"></AudioTrack>
+    </div>
   </div>
 </template>
 
@@ -29,4 +34,13 @@ export default {
       width: 320px
       height: 450px
       border-radius: 30px
+
+      &__title
+      &__list
+        width: 290px
+        height: 400px
+        overflow: auto
+        margin-bottom: 50px
+
+
 </style>
