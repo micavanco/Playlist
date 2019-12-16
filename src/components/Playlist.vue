@@ -1,11 +1,6 @@
 <template>
   <div class="playlist">
-    <AudioTrack></AudioTrack>
-    <ul>
-      <li v-for="track in tracks" :key="track.title">
-        {{track.title}}
-      </li>
-    </ul>
+    <AudioTrack v-for="track in tracks" v-bind:data="track"></AudioTrack>
   </div>
 </template>
 
