@@ -43,5 +43,4 @@ export default {
         overflow: auto
         margin-bottom: 50px
 
-
 </style>

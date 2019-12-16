@@ -22,7 +22,7 @@ export const store = new Vuex.Store({
       state.tracks = tracks
     },
     setSelectedTrack (state, track) {
-      state.track = track
+      state.selectedTrack = track
     }
   },
   actions: {
