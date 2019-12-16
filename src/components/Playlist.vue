@@ -4,7 +4,7 @@
       <h2>Playlist</h2>
     </div>
     <div class="playlist__list">
-      <AudioTrack v-for="track in tracks" v-bind:data="track"></AudioTrack>
+      <AudioTrack v-for="track in tracks" v-bind:data="track" v-bind:key="track.key"></AudioTrack>
     </div>
   </div>
 </template>
@@ -36,6 +36,7 @@ export default {
       border-radius: 30px
 
       &__title
+        color: #63449e
       &__list
         width: 290px
         height: 400px

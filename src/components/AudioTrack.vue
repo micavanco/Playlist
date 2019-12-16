@@ -1,5 +1,5 @@
 <template>
-    <div class="audiotrack">
+    <div class="audiotrack" v-on:click="onSelectedTrack(data)">
       <div class="audiotrack__header">
         {{data.time}} | {{data.artist}}
       </div>
@@ -15,9 +15,21 @@
 </template>
 
 <script>
+import {store} from '../store'
+
 export default {
   name: 'AudioTrack',
-  props: ['data']
+  props: {
+    data: {
+      type: Object,
+      required: true
+    }
+  },
+  methods: {
+    onSelectedTrack: (track) => {
+      store.dispatch('onSelectedTrack', track)
+    }
+  }
 }
 </script>
 
@@ -32,7 +44,9 @@ export default {
     cursor: pointer
     padding: 2px
     &:hover
-      background: rgba(169, 169, 169, 0.07)
+      background: rgba(226, 226, 226, 0.2)
+    &:active
+      background: rgba(181, 181, 181, 0.5)
     &__header
       font-size: 11px
       color: gray
