@@ -8,7 +8,14 @@
 
       </div>
     </div>
-    <input class="player__slider" type="range" min="0" max="500" value="selectedTrack.time">
+    <input class="player__slider"
+           type="range"
+           min="0"
+           v-bind:max="selectedTrack.time.replace(':','')"
+           v-on:mousemove="onSliderChange"
+           v-on:click="onSliderClick"
+           ref="slider"
+    >
     <div class="player__audio">
 
     </div>
@@ -17,9 +24,41 @@
 
 <script>
 import {mapState} from 'vuex'
+import {store} from '../store'
 export default {
   name: 'Player',
-  computed: mapState(['selectedTrack'])
+  computed: mapState(['selectedTrack', 'userTimes']),
+  methods: {
+    onSliderChange (e) {
+      const val = (e.target.value / e.target.max) * 100
+      e.target.style.background = '-webkit-gradient(linear, left top, right top, ' +
+        'color-stop(' + val + '%, white), ' +
+        'color-stop(' + val + '%, lightcoral)' +
+        ')'
+    },
+    onSliderClick (e) {
+      store.dispatch('onSaveUserTime', {key: this.selectedTrack.key, time: e.target.value})
+    }
+  },
+  updated () {
+    const slider = this.$refs.slider
+    const currentTime = this.userTimes[this.selectedTrack.key] || 0
+    slider.value = currentTime
+    const val = (currentTime / slider.max) * 100
+    slider.style.background = '-webkit-gradient(linear, left top, right top, ' +
+        'color-stop(' + val + '%, white), ' +
+        'color-stop(' + val + '%, lightcoral)' +
+        ')'
+  },
+  mounted () {
+    const slider = this.$refs.slider
+    const val = 0
+    this.$refs.slider.value = val
+    slider.style.background = '-webkit-gradient(linear, left top, right top, ' +
+      'color-stop(' + val + '%, white), ' +
+      'color-stop(' + val + '%, lightcoral)' +
+      ')'
+  }
 }
 </script>
 
@@ -57,16 +96,18 @@ export default {
       &__slider::-webkit-slider-thumb
         -webkit-appearance: none
         appearance: none
-        width: 20px
-        height: 20px
+        width: 21px
+        height: 21px
+        box-shadow: -1px 2px 15px -4px rgba(0,0,0,0.75)
         border-radius: 50%
         background: rgba(255, 255, 255, 0.91) url("../assets/volume-up-solid.svg") no-repeat center
         background-size: 60% 60%
         cursor: pointer
       &__slider::-moz-range-thumb
-        width: 25px
-        height: 25px
+        width: 21px
+        height: 21px
         border-radius: 50%
-        background: #4CAF50
+        background: rgba(255, 255, 255, 0.91) url("../assets/volume-up-solid.svg") no-repeat center
+        background-size: 60% 60%
         cursor: pointer
 </style>

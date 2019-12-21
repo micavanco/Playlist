@@ -15,7 +15,8 @@ export const store = new Vuex.Store({
       time: '2:35',
       title: "Still Don't Know",
       key: 1
-    }
+    },
+    userTimes: {}
   },
   mutations: {
     setTracks (state, tracks) {
@@ -23,6 +24,10 @@ export const store = new Vuex.Store({
     },
     setSelectedTrack (state, track) {
       state.selectedTrack = track
+    },
+    setUserTime (state, data) {
+      console.log(data)
+      state.userTimes[data.key] = data.time
     }
   },
   actions: {
@@ -34,6 +39,9 @@ export const store = new Vuex.Store({
     },
     onSelectedTrack ({commit}, track) {
       commit('setSelectedTrack', track)
+    },
+    onSaveUserTime ({commit}, data) {
+      commit('setUserTime', data)
     }
   }
 })
