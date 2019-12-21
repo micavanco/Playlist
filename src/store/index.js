@@ -9,10 +9,10 @@ export const store = new Vuex.Store({
   state: {
     tracks: [],
     selectedTrack: {
-      artist: "Icona Pop",
+      artist: 'Icona Pop',
       favorite: true,
-      image: "https://i.ytimg.com/vi/3TDHRSjR0s0/maxresdefault.jpg",
-      time: "2:35",
+      image: 'https://i.ytimg.com/vi/3TDHRSjR0s0/maxresdefault.jpg',
+      time: '2:35',
       title: "Still Don't Know",
       key: 1
     }

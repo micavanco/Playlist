@@ -1,7 +1,7 @@
 <template>
   <div class="playlist">
     <div class="playlist__title">
-      <h2>Playlist</h2>
+      <h3>Playlist</h3>
     </div>
     <div class="playlist__list">
       <AudioTrack v-for="track in tracks" v-bind:data="track" v-bind:key="track.key"></AudioTrack>
