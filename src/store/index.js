@@ -26,7 +26,6 @@ export const store = new Vuex.Store({
       state.selectedTrack = track
     },
     setUserTime (state, data) {
-      console.log(data)
       state.userTimes[data.key] = data.time
     }
   },

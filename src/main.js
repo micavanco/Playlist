@@ -3,22 +3,21 @@
 import Vue from 'vue'
 import App from './App'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faShareAlt, faHeart } from '@fortawesome/free-solid-svg-icons'
+import { faShareAlt, faHeart, faRandom, faRedo, faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
-import Rx from 'rxjs'
-import VueRx from 'vue-rx'
 
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
 import {store} from './store'
 
-Vue.use(VueRx, Rx)
 Vue.use(VueAxios, axios)
 
 library.add(faShareAlt)
 library.add(faHeart)
+library.add(faRandom)
+library.add(faRedo)
+library.add(faBars)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
