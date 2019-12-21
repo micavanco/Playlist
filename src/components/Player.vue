@@ -21,7 +21,11 @@
            ref="slider"
     >
     <div class="player__audio">
-
+      <font-awesome-icon class="player__audio__share" :icon="['fas', 'share-alt']" />
+      <font-awesome-icon class="player__audio__step-backward" :icon="['fas', 'step-backward']" />
+      <font-awesome-icon class="player__audio__play" :icon="['fas', 'play']" />
+      <font-awesome-icon class="player__audio__step-forward" :icon="['fas', 'step-forward']" />
+      <font-awesome-icon class="player__audio__heart" :icon="['fas', 'heart']" />
     </div>
   </div>
 </template>
@@ -142,4 +146,47 @@ export default {
         background: rgba(255, 255, 255, 0.91) url("../assets/volume-up-solid.svg") no-repeat center
         background-size: 60% 60%
         cursor: pointer
+      &__audio
+        display: flex
+        flex-direction: row
+        justify-content: center
+        align-items: center
+        height: 137px
+        position: relative
+        &__share
+          background: white
+          position: absolute
+          left: 20px
+          padding: 10px
+          border-radius: 50%
+        &__step-backward
+          background: #737db3
+          position: absolute
+          padding: 12px 14px
+          border-radius: 50%
+          left: 87px
+          color: white
+        &__play
+          background: #737db3
+          position: absolute
+          padding: 16px 18px
+          border-radius: 50%
+          left: 136px
+          top: 40px
+          color: white
+        &__step-forward
+          background: #737db3
+          position: absolute
+          padding: 12px 14px
+          border-radius: 50%
+          right: 85px
+          color: white
+        &__heart
+          background: white
+          position: absolute
+          padding: 12px 14px
+          border-radius: 50%
+          right: 20px
+          color: red
+
 </style>

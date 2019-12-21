@@ -29,7 +29,7 @@ export default {
     align-items: center
     border: bisque
     background: #737db3
-    background: linear-gradient(#737db3, #9198e5)
+    background: linear-gradient(#737db3, #5b4a82)
     max-height: 540px
     height: 100%
     max-width: 790px
