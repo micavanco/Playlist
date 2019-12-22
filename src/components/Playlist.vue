@@ -1,7 +1,7 @@
 <template>
   <div class="playlist">
     <div class="playlist__title">
-      <font-awesome-icon class="playlist__title__reply" :icon="['fas', 'reply']" />
+      <font-awesome-icon class="playlist__title__reply" :icon="['fas', 'reply']" v-on:click="onGoToPlayerClick" />
       <h3>Playlist</h3>
     </div>
     <div class="playlist__list">
@@ -20,6 +20,11 @@ export default {
   computed: mapState(['tracks']),
   created: () => {
     store.dispatch('onInit')
+  },
+  methods: {
+    onGoToPlayerClick () {
+      store.dispatch('onChangeView', true)
+    }
   }
 }
 </script>
@@ -45,6 +50,7 @@ export default {
          border-radius: 50%
          left: 15px
          top: 10px
+         cursor: pointer
       &__list
         width: 290px
         height: 400px

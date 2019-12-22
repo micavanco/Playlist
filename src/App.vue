@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <Player></Player>
-    <Playlist></Playlist>
+    <Player v-if="this.isPlayerVisible"></Player>
+    <Playlist v-else></Playlist>
   </div>
 </template>
 
 <script>
 import Playlist from './components/Playlist'
 import Player from './components/Player'
+import {mapState} from 'vuex'
 export default {
   name: 'App',
-  components: {Player, Playlist}
+  components: {Player, Playlist},
+  computed: mapState(['isPlayerVisible'])
 }
 </script>
 
@@ -32,7 +34,7 @@ export default {
     background: linear-gradient(#737db3, #5b4a82)
     max-height: 540px
     height: 100%
-    max-width: 790px
+    max-width: 395px
     width: 100%
     flex-wrap: wrap
     box-shadow: 1px 15px 35px -12px rgba(0,0,0,0.75)

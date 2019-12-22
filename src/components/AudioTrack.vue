@@ -28,6 +28,7 @@ export default {
   methods: {
     onSelectedTrack: (track) => {
       store.dispatch('onSelectedTrack', track)
+      store.dispatch('onChangeView', true)
     }
   }
 }

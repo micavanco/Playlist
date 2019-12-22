@@ -16,7 +16,8 @@ export const store = new Vuex.Store({
       title: "Still Don't Know",
       key: 1
     },
-    userTimes: {}
+    userTimes: {},
+    isPlayerVisible: false
   },
   mutations: {
     setTracks (state, tracks) {
@@ -27,6 +28,10 @@ export const store = new Vuex.Store({
     },
     setUserTime (state, data) {
       state.userTimes[data.key] = data.time
+    },
+    setVisibleWindow (state, isVisible) {
+      state.isPlayerVisible = isVisible
+      console.log(state.isPlayerVisible)
     }
   },
   actions: {
@@ -41,6 +46,9 @@ export const store = new Vuex.Store({
     },
     onSaveUserTime ({commit}, data) {
       commit('setUserTime', data)
+    },
+    onChangeView ({commit}, isVisible) {
+      commit('setVisibleWindow', isVisible)
     }
   }
 })
