@@ -1,0 +1,58 @@
+[
+  {
+    "artist": "Icona Pop",
+    "favorite": true,
+    "image": "https://i.ytimg.com/vi/3TDHRSjR0s0/maxresdefault.jpg",
+    "time": "2:35",
+    "title": "Still Don't Know",
+    "key": 1
+  },
+  {
+    "artist": "Icona Pop",
+    "favorite": false,
+    "image": "https://i.ytimg.com/vi/HQ40wBhB4dc/hqdefault.jpg",
+    "time": "3:20",
+    "title": "I Love it",
+    "key": 2
+  },
+  {
+    "artist": "Icona Pop",
+    "favorite": true,
+    "image": "https://i.ytimg.com/vi/4_7zkXv17QE/maxresdefault.jpg",
+    "time": "2:51",
+    "title": "Nights Like This",
+    "key": 3
+  },
+  {
+    "artist": "Icona Pop",
+    "favorite": false,
+    "image": "https://bi.im-g.pl/im/29/ab/14/z21672489V,W-Gdansku-rozpoczal-sie-jeden-z-najpopularniejszyc.jpg",
+    "time": "3:02",
+    "title": "We Got the World",
+    "key": 4
+  },
+  {
+    "artist": "Icona Pop",
+    "favorite": false,
+    "image": "https://m.media-amazon.com/images/I/81l7UBHYS+L._SS500_.jpg",
+    "time": "2:52",
+    "title": "Someone Who Can Dance",
+    "key": 5
+  },
+  {
+    "artist": "Icona Pop",
+    "favorite": false,
+    "image": "https://i.ytimg.com/vi/3igA3hkJhDo/maxresdefault.jpg",
+    "time": "3:00",
+    "title": "All Night",
+    "key": 6
+  },
+  {
+    "artist": "Icona Pop",
+    "favorite": false,
+    "image": "https://i1.sndcdn.com/artworks-000029897502-i7stun-t500x500.jpg",
+    "time": "2:39",
+    "title": "Ready For the Weekend",
+    "key": 7
+  }
+]
