@@ -1,6 +1,7 @@
 # Playlist
 
 > Audio tracks player - simple Vue.js application to list and potentially play each audio track
+
 https://micavanco.github.io/Playlist/
 
 ## Build Setup
