@@ -57,5 +57,4 @@ export default {
         height: 400px
         overflow: auto
         margin-bottom: 50px
-
 </style>
