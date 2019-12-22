@@ -22,9 +22,10 @@
     >
     <div class="player__audio">
       <font-awesome-icon class="player__audio__share" :icon="['fas', 'share-alt']" />
-      <font-awesome-icon class="player__audio__step-backward" :icon="['fas', 'step-backward']" />
-      <font-awesome-icon class="player__audio__play" :icon="['fas', 'play']" />
-      <font-awesome-icon class="player__audio__step-forward" :icon="['fas', 'step-forward']" />
+      <font-awesome-icon class="player__audio__step-backward" :icon="['fas', 'step-backward']" v-on:click="onChangeSong(false)" />
+      <font-awesome-icon class="player__audio__play" :icon="['fas', 'play']" v-on:click="onPlaySong" v-if="!this.isPlaying"/>
+      <font-awesome-icon class="player__audio__play" :icon="['fas', 'pause']" v-on:click="onPlaySong" v-else/>
+      <font-awesome-icon class="player__audio__step-forward" :icon="['fas', 'step-forward']" v-on:click="onChangeSong(true)" />
       <font-awesome-icon class="player__audio__heart" :icon="['fas', 'heart']" />
     </div>
   </div>
@@ -36,6 +37,11 @@ import {store} from '../store'
 export default {
   name: 'Player',
   computed: mapState(['selectedTrack', 'userTimes']),
+  data: () => {
+    return {
+      isPlaying: false
+    }
+  },
   methods: {
     onSliderChange (e) {
       const val = (e.target.value / e.target.max) * 100
@@ -49,6 +55,12 @@ export default {
     },
     onGoToPlayListClick () {
       store.dispatch('onChangeView', false)
+    },
+    onPlaySong () {
+      this.isPlaying = !this.isPlaying
+    },
+    onChangeSong (isNext) {
+      store.dispatch('onGoToSong', {key: this.selectedTrack.key, isNext})
     }
   },
   updated () {
@@ -63,8 +75,9 @@ export default {
   },
   mounted () {
     const slider = this.$refs.slider
-    const val = 0
-    this.$refs.slider.value = val
+    const currentTime = this.userTimes[this.selectedTrack.key] || 0
+    slider.value = currentTime
+    const val = (currentTime / slider.max) * 100
     slider.style.background = '-webkit-gradient(linear, left top, right top, ' +
       'color-stop(' + val + '%, white), ' +
       'color-stop(' + val + '%, lightcoral)' +
@@ -171,6 +184,7 @@ export default {
           left: 20px
           padding: 10px
           border-radius: 50%
+          cursor: pointer
         &__step-backward
           background: #737db3
           position: absolute
@@ -178,6 +192,7 @@ export default {
           border-radius: 50%
           left: 87px
           color: white
+          cursor: pointer
         &__play
           background: #737db3
           position: absolute
@@ -186,6 +201,7 @@ export default {
           left: 136px
           top: 40px
           color: white
+          cursor: pointer
         &__step-forward
           background: #737db3
           position: absolute
@@ -193,6 +209,7 @@ export default {
           border-radius: 50%
           right: 85px
           color: white
+          cursor: pointer
         &__heart
           background: white
           position: absolute
@@ -200,5 +217,6 @@ export default {
           border-radius: 50%
           right: 20px
           color: red
+          cursor: pointer
 
 </style>

@@ -31,7 +31,13 @@ export const store = new Vuex.Store({
     },
     setVisibleWindow (state, isVisible) {
       state.isPlayerVisible = isVisible
-      console.log(state.isPlayerVisible)
+    },
+    setSong (state, data) {
+      data.key = data.isNext ? ++data.key : --data.key
+      const track = state.tracks.find(el => el.key === data.key)
+      if (track) {
+        state.selectedTrack = track
+      }
     }
   },
   actions: {
@@ -49,6 +55,9 @@ export const store = new Vuex.Store({
     },
     onChangeView ({commit}, isVisible) {
       commit('setVisibleWindow', isVisible)
+    },
+    onGoToSong ({commit}, data) {
+      commit('setSong', data)
     }
   }
 })

@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faShareAlt, faHeart, faRandom, faRedo, faBars, faStepBackward, faStepForward, faPlay, faReply, faStop } from '@fortawesome/free-solid-svg-icons'
+import { faShareAlt, faHeart, faRandom, faRedo, faBars, faStepBackward, faStepForward, faPlay, faReply, faPause } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 import axios from 'axios'
@@ -22,7 +22,7 @@ library.add(faStepForward)
 library.add(faStepBackward)
 library.add(faPlay)
 library.add(faReply)
-library.add(faStop)
+library.add(faPause)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
