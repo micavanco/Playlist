@@ -20,6 +20,7 @@ export default {
 
 <style lang="sass">
   @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap')
+
   body
     margin: 0
     display: flex
