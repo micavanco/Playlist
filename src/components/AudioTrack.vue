@@ -10,7 +10,6 @@
         <font-awesome-icon class="audiotrack__icons__share" :icon="['fas', 'share-alt']" />
         <font-awesome-icon class="audiotrack__icons__heart" :icon="['fas', 'heart']" />
       </div>
-
     </div>
 </template>
 
