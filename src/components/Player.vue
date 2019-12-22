@@ -23,8 +23,10 @@
     <div class="player__audio">
       <font-awesome-icon class="player__audio__share" :icon="['fas', 'share-alt']" />
       <font-awesome-icon class="player__audio__step-backward" :icon="['fas', 'step-backward']" v-on:click="onChangeSong(false)" />
-      <font-awesome-icon class="player__audio__play" :icon="['fas', 'play']" v-on:click="onPlaySong" v-if="!this.isPlaying"/>
-      <font-awesome-icon class="player__audio__play" :icon="['fas', 'pause']" v-on:click="onPlaySong" v-else/>
+      <transition name="fade">
+        <font-awesome-icon class="player__audio__play" :icon="['fas', 'play']" v-on:click="onPlaySong" v-if="!this.isPlaying"/>
+        <font-awesome-icon class="player__audio__play" :icon="['fas', 'pause']" v-on:click="onPlaySong" v-else/>
+      </transition>
       <font-awesome-icon class="player__audio__step-forward" :icon="['fas', 'step-forward']" v-on:click="onChangeSong(true)" />
       <font-awesome-icon class="player__audio__heart" :icon="['fas', 'heart']" />
     </div>
@@ -94,6 +96,8 @@ export default {
       border-radius: 30px
       overflow: hidden
       position: relative
+      margin: 40px
+      display: inline-block
       &__top
         height: 320px
         width: 320px
@@ -193,6 +197,11 @@ export default {
           left: 87px
           color: white
           cursor: pointer
+          transition: all 0.3s ease-in-out
+          &:hover
+            color: #ffb6f0
+          &:active
+            color: #737db3
         &__play
           background: #737db3
           position: absolute
@@ -202,6 +211,11 @@ export default {
           top: 40px
           color: white
           cursor: pointer
+          transition: all 0.3s ease-in-out
+          &:hover
+            color: #f4f4f4
+          &:active
+            color: #737db3
         &__step-forward
           background: #737db3
           position: absolute
@@ -210,6 +224,11 @@ export default {
           right: 85px
           color: white
           cursor: pointer
+          transition: all 0.3s ease-in-out
+          &:hover
+            color: #ffb6f0
+          &:active
+            color: #737db3
         &__heart
           background: white
           position: absolute
@@ -218,5 +237,12 @@ export default {
           right: 20px
           color: red
           cursor: pointer
+  .v-enter-active, .v-leave-active
+    animation: ease-in-out 1s FadeOutIcon
+  @keyframes FadeOutIcon
+    from
+      opacity: 0
+    to
+      opacity: 1
 
 </style>

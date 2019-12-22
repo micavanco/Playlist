@@ -40,7 +40,9 @@ export default {
       width: 320px
       height: 450px
       border-radius: 30px
-      position: relative
+      position: absolute
+      margin: 40px
+      top: 0
       &__title
         color: #63449e
         &__reply
